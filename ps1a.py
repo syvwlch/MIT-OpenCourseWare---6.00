@@ -5,12 +5,12 @@
 #
 
 # Gathering user inputs
-outstanding_balance=raw_input('Enter the outstanding balance'
-                              ' on your credit card: ')
-annual_interest_rate=raw_input('Enter the annual credit card interest rate'
-                               ' as a decimal: ')
-minimum_monthly_payment_rate=raw_input('Enter the minimum monthly payment rate'
-                                       ' as a decimal: ')
+outstanding_balance=float(raw_input('Enter the outstanding balance'
+                              ' on your credit card: '))
+annual_interest_rate=float(raw_input('Enter the annual credit card interest rate'
+                               ' as a decimal: '))
+minimum_monthly_payment_rate=float(raw_input('Enter the minimum monthly payment rate'
+                                       ' as a decimal: '))
 
 # Calculating the first month
 minimum_monthly_payment=minimum_monthly_payment_rate*outstanding_balance
