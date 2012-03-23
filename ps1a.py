@@ -12,14 +12,16 @@ annual_interest_rate=float(raw_input('Enter the annual credit card interest rate
 minimum_monthly_payment_rate=float(raw_input('Enter the minimum monthly payment rate'
                                        ' as a decimal: '))
 
-# Calculating the first month
-minimum_monthly_payment=minimum_monthly_payment_rate*outstanding_balance
-interest_paid=annual_interest_rate/12*outstanding_balance
-principal_paid=minimum_monthly_payment-interest_paid
-outstanding_balance=outstanding_balance-principal_paid
+# Iterating the calculation and display of the results
+for month in range(1,13):
+    # Calculating the month
+    minimum_monthly_payment=minimum_monthly_payment_rate*outstanding_balance
+    interest_paid=annual_interest_rate/12*outstanding_balance
+    principal_paid=minimum_monthly_payment-interest_paid
+    outstanding_balance=outstanding_balance-principal_paid
 
-# Printing the first month
-print 'Month: '+str(1)
-print 'Minimum monthly payment: $'+str(minimum_monthly_payment)
-print 'Principle paid: $'+str(principal_paid)
-print 'Remaining balance: $'+str(outstanding_balance)
+    # Printing the month
+    print 'Month: '+str(month)
+    print 'Minimum monthly payment: $'+str(minimum_monthly_payment)
+    print 'Principle paid: $'+str(principal_paid)
+    print 'Remaining balance: $'+str(outstanding_balance)
