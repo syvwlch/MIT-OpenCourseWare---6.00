@@ -1,7 +1,7 @@
 # Problem Set 1
 # Name: Mathieu Glachant
 # Collaborators: None
-# Time Spent: Started 14:15 on Friday
+# Time Spent: 0:30
 #
 
 # Gathering user inputs
