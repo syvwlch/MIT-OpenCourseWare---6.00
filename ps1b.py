@@ -29,6 +29,7 @@ while outstanding_balance>0:
 # Calculate and print the results over the year
 
 print 'RESULT'
-print 'Monthly payment to pay off debt in one year: '+str(minimum_monthly_payment)
+print 'Monthly payment to pay off debt in one year: '+str(
+            minimum_monthly_payment)
 print 'Number of months needed: '+str(month)
 print 'Remaining balance: $'+str(outstanding_balance)
