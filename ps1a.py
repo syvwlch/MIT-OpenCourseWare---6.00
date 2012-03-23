@@ -15,8 +15,9 @@ minimum_monthly_payment_rate=float(raw_input('Enter the minimum monthly payment 
 # Iterating the calculation and display of the results
 for month in range(1,13):
     # Calculating the month
-    minimum_monthly_payment=minimum_monthly_payment_rate*outstanding_balance
-    interest_paid=annual_interest_rate/12*outstanding_balance
+    minimum_monthly_payment=round(minimum_monthly_payment_rate
+                                  *outstanding_balance, 2)
+    interest_paid=round(annual_interest_rate/12*outstanding_balance, 2)
     principal_paid=minimum_monthly_payment-interest_paid
     outstanding_balance=outstanding_balance-principal_paid
 
