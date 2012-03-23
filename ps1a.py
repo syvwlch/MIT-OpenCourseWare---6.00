@@ -11,3 +11,9 @@ annual_interest_rate=raw_input('Enter the annual credit card interest rate'
                                ' as a decimal: ')
 minimum_monthly_payment_rate=raw_input('Enter the minimum monthly payment rate'
                                        ' as a decimal: ')
+
+# Calculating the first month
+minimum_monthly_payment=minimum_monthly_payment_rate*outstanding_balance
+interest_paid=annual_interest_rate/12*outstanding_balance
+principal_paid=minimum_monthly_payment-interest_paid
+outstanding_balance=outstanding_balance-principal_paid
