@@ -17,3 +17,9 @@ minimum_monthly_payment=minimum_monthly_payment_rate*outstanding_balance
 interest_paid=annual_interest_rate/12*outstanding_balance
 principal_paid=minimum_monthly_payment-interest_paid
 outstanding_balance=outstanding_balance-principal_paid
+
+# Printing the first month
+print 'Month: '+str(1)
+print 'Minimum monthly payment: $'+str(minimum_monthly_payment)
+print 'Principle paid: $'+str(principal_paid)
+print 'Remaining balance: $'+str(outstanding_balance)
