@@ -17,8 +17,10 @@ outstanding_balance=initial_balance
 while outstanding_balance>0:
     minimum_monthly_payment=minimum_monthly_payment+10.0
     outstanding_balance=initial_balance
-    # Iterating the calculation and display of the results
-    for month in range(1,13):
+    month=0
+    # Iterating each month while it's less than a year AND the debt is not paid
+    while month<12 and outstanding_balance>0:
+        month=month+1
         # Calculating the month
         interest_paid=round(annual_interest_rate/12*outstanding_balance, 2)
         principal_paid=minimum_monthly_payment-interest_paid
