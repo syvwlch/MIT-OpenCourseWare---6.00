@@ -15,7 +15,7 @@ upper_bound_monthly_payment=(
     initial_balance*(1+(annual_interest_rate/12))**12.0)/12.0
 outstanding_balance=initial_balance
 
-# Iterating until the minimum payment is enough to pay the debt in one year
+# Iterating until the upper and lower bound are within one cent of each other
 while upper_bound_monthly_payment-lower_bound_monthly_payment>=0.01:
     minimum_monthly_payment=(
         (lower_bound_monthly_payment+upper_bound_monthly_payment)/2.0)
