@@ -81,6 +81,7 @@ def mask_letters(original_string, letters, mask_char):
     
 word = choose_word(wordlist)
 available_letters = string.lowercase #'abcdefghijklmnopqrstuvwxyz'
+masked_word = mask_letters(word, available_letters, '_')
 
 # Main program body
 
@@ -95,6 +96,7 @@ for guess in range(2, 0, -1):
     letter = raw_input('Please guess a letter: ').lower()
     available_letters = remove_letter(available_letters, letter)
     if letter in word:
-        print 'Good guess! ' + mask_letters(word, available_letters, '_')
+        masked_word = mask_letters(word, available_letters, '_')
+        print 'Good guess! ' + masked_word
     else:
-        print 'Oops! That letter is not in my word. '
+        print 'Oops! That letter is not in my word. ' + masked_word
