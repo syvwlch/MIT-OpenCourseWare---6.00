@@ -40,7 +40,16 @@ def compute_deriv(poly):
     poly: tuple of numbers, length > 0
     returns: tuple of numbers
     """
-    # TO DO ... 
+    poly_prime = ()
+    for order in range(1, len(poly), 1):
+        poly_prime = poly_prime + (poly[order]*(order),)
+    if poly_prime == ():
+        poly_prime = (0.0,)
+    return poly_prime
+
+##poly = (-13.39, 0.0, 17.5, 3.0, 1.0)    # x^4 + 3x^3 + 17.5x^2 - 13.39
+##print compute_deriv(poly)        # 4x^3 + 9x^2 + 35^x
+##print compute_deriv((-13.39,))    # 0
 
 def compute_root(poly, x_0, epsilon):
     """
