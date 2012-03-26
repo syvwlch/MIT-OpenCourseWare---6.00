@@ -1,6 +1,7 @@
-# 6.00 Problem Set 2
-#
-# Successive Approximation
+# Problem Set 2
+# Name: Mathieu Glachant
+# Collaborators: None
+# Time: 0:10 for problem 1
 #
 
 def evaluate_poly(poly, x):
@@ -17,8 +18,14 @@ def evaluate_poly(poly, x):
     x: number
     returns: float
     """
-    # TO DO ... 
+    value = 0
+    for order in range(0, len(poly), 1):
+        value += poly[order]*x**order
+    return value
 
+#poly = (0.0, 0.0, 5.0, 9.3, 7.0)    # f(x) = 7x^4 + 9.3x^3 + 5x^2
+#x = -13
+#print evaluate_poly(poly, x)
 
 def compute_deriv(poly):
     """
