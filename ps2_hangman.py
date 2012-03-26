@@ -97,6 +97,13 @@ for guess in range(2, 0, -1):
     available_letters = remove_letter(available_letters, letter)
     if letter in word:
         masked_word = mask_letters(word, available_letters, '_')
+        if masked_word == word:
+            break
         print 'Good guess! ' + masked_word
     else:
         print 'Oops! That letter is not in my word. ' + masked_word
+if masked_word == word:
+    print 'You win! The word is indeed ' + word + '.'
+else:
+    print 'I am sorry, but you have run out of guesses.'
+    print 'The word was ' + word + '.'
