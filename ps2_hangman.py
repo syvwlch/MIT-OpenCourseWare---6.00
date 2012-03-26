@@ -1,7 +1,7 @@
-# 6.00 Problem Set 3
-# 
-# Hangman
-#
+# Problem Set 2
+# Name: Mathieu Glachant
+# Collaborators (Discussion): None
+# Time: 
 
 
 # -----------------------------------
@@ -46,3 +46,5 @@ def choose_word(wordlist):
 wordlist = load_words()
 
 # your code begins here!
+
+print choose_word(wordlist)
