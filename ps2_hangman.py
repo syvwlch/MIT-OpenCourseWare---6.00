@@ -47,7 +47,16 @@ wordlist = load_words()
 
 # your code begins here!
 
+def remove_letter(original_string, letter):
+    """
+    original_string (string): string of non-zero length
+
+    Returns the original string with the first instance of the letter removed
+    """
+    return original_string.partition(letter)[0] + original_string.partition(letter)[2]
+
 word = choose_word(wordlist)
+available_letters = string.lowercase #'abcdefghijklmnopqrstuvwxyz'
     
 print 'Welcome to the game, Hangman!'
 print 'I am thinking of a word that is ' + str(len(word)) + ' letters long.'
@@ -56,7 +65,9 @@ print '-----------------'
 
 for guess in range(2, 0, -1):
     print 'You have ' + str(guess) + ' guesses left.'
+    print 'Available letters: ' + available_letters
     letter = raw_input('Please guess a letter: ')
+    available_letters = remove_letter(available_letters, letter)
     if letter in word:
         print 'Good guess!'
     else:
