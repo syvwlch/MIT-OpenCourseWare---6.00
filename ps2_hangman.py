@@ -1,7 +1,7 @@
 # Problem Set 2
 # Name: Mathieu Glachant
 # Collaborators (Discussion): None
-# Time: 
+# Time: 1:00
 
 
 # -----------------------------------
@@ -87,10 +87,10 @@ masked_word = mask_letters(word, available_letters, '_')
 
 print 'Welcome to the game, Hangman!'
 print 'I am thinking of a word that is ' + str(len(word)) + ' letters long.'
-print 'Pssssst.... The word is ' + word + ', ok?'
+##print 'Pssssst.... The word is ' + word + ', ok?'
 print '-----------------'
 
-for guess in range(2, 0, -1):
+for guess in range(8, 0, -1):
     print 'You have ' + str(guess) + ' guesses left.'
     print 'Available letters: ' + available_letters
     letter = raw_input('Please guess a letter: ').lower()
