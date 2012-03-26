@@ -66,7 +66,7 @@ print '-----------------'
 for guess in range(2, 0, -1):
     print 'You have ' + str(guess) + ' guesses left.'
     print 'Available letters: ' + available_letters
-    letter = raw_input('Please guess a letter: ')
+    letter = raw_input('Please guess a letter: ').lower()
     available_letters = remove_letter(available_letters, letter)
     if letter in word:
         print 'Good guess!'
