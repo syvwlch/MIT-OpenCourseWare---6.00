@@ -47,4 +47,17 @@ wordlist = load_words()
 
 # your code begins here!
 
-print choose_word(wordlist)
+word = choose_word(wordlist)
+    
+print 'Welcome to the game, Hangman!'
+print 'I am thinking of a word that is ' + str(len(word)) + ' letters long.'
+print 'Pssssst.... It is ' + word
+print '-----------------'
+
+for guess in range(2, 0, -1):
+    print 'You have ' + str(guess) + ' guesses left.'
+    letter = raw_input('Please guess a letter: ')
+    if letter in word:
+        print 'Good guess!'
+    else:
+        print 'Oops! That letter is not in my word.'
