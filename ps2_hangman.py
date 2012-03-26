@@ -49,7 +49,6 @@ wordlist = load_words()
 
 def remove_letter(original_string, letter):
     """
-    original_string (string): string of non-zero length
     original_string (string)
     letter (string): is of length 1
 
