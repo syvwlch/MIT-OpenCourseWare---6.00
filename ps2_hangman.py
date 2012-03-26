@@ -60,14 +60,27 @@ def remove_letter(original_string, letter):
     
     return original_string.partition(letter)[0] + original_string.partition(letter)[2]
 
+def mask_letters(original_string, letters, mask_char):
+    """
+    original_string (string)
+    letters (string)
+    mask_char (string): is of length 1
+
+    Returns the original string with any instance of the letters masked
+    """
+    assert type(original_string) == str
+    assert type(letters) == str
+    assert type(mask_char) == str
+    assert len(mask_char) == 1
+    
+    for letter in letters:
+        original_string = original_string.replace(letter, mask_char)
+    return original_string
+
 # Initialization of global variables
     
 word = choose_word(wordlist)
 available_letters = string.lowercase #'abcdefghijklmnopqrstuvwxyz'
-display_word = ''
-for letter in word:
-    display_word += '_'
-    
 
 # Main program body
 
@@ -82,6 +95,6 @@ for guess in range(2, 0, -1):
     letter = raw_input('Please guess a letter: ').lower()
     available_letters = remove_letter(available_letters, letter)
     if letter in word:
-        print 'Good guess! ' + display_word
+        print 'Good guess! ' + mask_letters(word, available_letters, '_')
     else:
-        print 'Oops! That letter is not in my word. ' + display_word
+        print 'Oops! That letter is not in my word. '
