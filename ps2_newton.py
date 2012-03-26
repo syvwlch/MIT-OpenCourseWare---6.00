@@ -3,6 +3,7 @@
 # Collaborators: None
 # Time: 0:10 for problem 1
 #       0:20 for problem 2
+#       0:20 for problem 3
 
 def evaluate_poly(poly, x):
     """
@@ -71,5 +72,15 @@ def compute_root(poly, x_0, epsilon):
     epsilon: float > 0
     returns: tuple (float, int)
     """
-    # TO DO ... 
+    iterations = 1
+    poly_prime = compute_deriv(poly)
+    while abs(evaluate_poly(poly, x_0)) > epsilon:
+        iterations += 1
+        x_0 = x_0 - evaluate_poly(poly, x_0)/evaluate_poly(poly_prime, x_0)
+    return (x_0, iterations)
 
+##poly = (-13.39, 0.0, 17.5, 3.0, 1.0)    #x^4 + 3x^3 + 17.5x^2 - 13.39
+##x_0 = 0.1
+##epsilon = .0001
+##print compute_root(poly, x_0, epsilon)
+##print (0.80679075379635201, 8.0)
