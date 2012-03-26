@@ -23,9 +23,9 @@ def evaluate_poly(poly, x):
         value += poly[order]*x**order
     return value
 
-#poly = (0.0, 0.0, 5.0, 9.3, 7.0)    # f(x) = 7x^4 + 9.3x^3 + 5x^2
-#x = -13
-#print evaluate_poly(poly, x)
+##poly = (0.0, 0.0, 5.0, 9.3, 7.0)    # f(x) = 7x^4 + 9.3x^3 + 5x^2
+##x = -13
+##print evaluate_poly(poly, x)
 
 def compute_deriv(poly):
     """
