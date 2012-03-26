@@ -50,9 +50,15 @@ wordlist = load_words()
 def remove_letter(original_string, letter):
     """
     original_string (string): string of non-zero length
+    original_string (string)
+    letter (string): is of length 1
 
     Returns the original string with the first instance of the letter removed
     """
+    assert type(original_string) == str
+    assert type(letter) == str
+    assert len(letter) == 1
+    
     return original_string.partition(letter)[0] + original_string.partition(letter)[2]
 
 word = choose_word(wordlist)
