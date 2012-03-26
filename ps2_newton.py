@@ -2,7 +2,7 @@
 # Name: Mathieu Glachant
 # Collaborators: None
 # Time: 0:10 for problem 1
-#
+#       0:20 for problem 2
 
 def evaluate_poly(poly, x):
     """
