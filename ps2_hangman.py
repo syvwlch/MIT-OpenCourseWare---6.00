@@ -60,15 +60,20 @@ def remove_letter(original_string, letter):
     
     return original_string.partition(letter)[0] + original_string.partition(letter)[2]
 
+# Initialization of global variables
+    
 word = choose_word(wordlist)
 available_letters = string.lowercase #'abcdefghijklmnopqrstuvwxyz'
 display_word = ''
 for letter in word:
     display_word += '_'
     
+
+# Main program body
+
 print 'Welcome to the game, Hangman!'
 print 'I am thinking of a word that is ' + str(len(word)) + ' letters long.'
-print 'Pssssst.... It is ' + word
+print 'Pssssst.... The word is ' + word + ', ok?'
 print '-----------------'
 
 for guess in range(2, 0, -1):
@@ -77,7 +82,6 @@ for guess in range(2, 0, -1):
     letter = raw_input('Please guess a letter: ').lower()
     available_letters = remove_letter(available_letters, letter)
     if letter in word:
-        # update display_word
         print 'Good guess! ' + display_word
     else:
         print 'Oops! That letter is not in my word. ' + display_word
