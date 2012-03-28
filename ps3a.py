@@ -172,7 +172,16 @@ def is_valid_word(word, hand, word_list):
     hand: dictionary (string -> int)
     word_list: list of lowercase strings
     """
-    # TO DO...
+    assert type(word) == str
+
+    if word in word_list:
+        validity = True
+        for letter in word:
+            validity = validity and hand.get(letter, 0) >= word.count(letter)
+    else:
+        validity = False
+
+    return validity
 
 def calculate_handlen(hand):
     handlen = 0
