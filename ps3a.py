@@ -260,10 +260,20 @@ def play_game(word_list):
 
     * If the user inputs anything else, ask them again.
     """
-
-    hand = deal_hand(HAND_SIZE)
-    play_hand(hand, word_list)
-
+    choice = 'n'
+    while choice != 'e':
+        if choice == 'n':
+            starting_hand = deal_hand(HAND_SIZE)
+        hand = starting_hand
+        play_hand(hand, word_list)
+        print
+        choice = ''
+        while choice not in ('e', 'n', 'r'):
+            print 'Please choose from the following:'
+            print '  "n" to play a new, random hand.'
+            print '  "r" to play again with the same hand.'
+            print '  "e" to exit the game.'
+            choice = raw_input('Choice: ').lower()
     return  None
 #
 # Build data structures used for entire session and play game
