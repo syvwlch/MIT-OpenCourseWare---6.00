@@ -3,6 +3,7 @@
 # Collaborators: None
 # Time: Problem 1 - 0:20
 #       Problem 2 - 0:10
+#       Problem 3 - 0:20
 
 import random
 import string
