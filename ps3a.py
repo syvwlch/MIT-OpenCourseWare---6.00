@@ -76,8 +76,19 @@ def get_word_score(word, n):
     word: string (lowercase letters)
     returns: int >= 0
     """
-    # TO DO...
+    assert type(word) == str and type(n) == int and n > 0
+    word.lower()
     
+    score = 0
+    
+    for letter in word:
+        score += SCRABBLE_LETTER_VALUES[letter]
+    score = score * len(word)
+    if len(word) == n:
+        score += 50
+
+    return score
+
 #
 # Make sure you understand how this function works and what it does!
 #
