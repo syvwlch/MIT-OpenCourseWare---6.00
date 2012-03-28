@@ -105,6 +105,7 @@ def display_hand(hand):
         for j in range(hand[letter]):
              print letter,              # print all on the same line
     print                               # print an empty line
+    return ''
 
 #
 # Make sure you understand how this function works and what it does!
