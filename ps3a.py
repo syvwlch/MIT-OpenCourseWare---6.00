@@ -264,7 +264,7 @@ def play_game(word_list):
     while choice != 'e':
         if choice == 'n':
             starting_hand = deal_hand(HAND_SIZE)
-        hand = starting_hand
+        hand = starting_hand.copy()
         play_hand(hand, word_list)
         print
         choice = ''
