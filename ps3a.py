@@ -223,14 +223,15 @@ def play_hand(hand, word_list):
       
     """
     score = 0
-    while calculate_handlen(hand) > 0:
-        print 'Current hand: ', display_hand(hand)
+    play_hand = hand.copy()
+    while calculate_handlen(play_hand) > 0:
+        print 'Current hand: ', display_hand(play_hand)
         word = raw_input(
         'Enter a word, or a "." to indicate that you are finished: ').lower()
-        if is_valid_word(word, hand, word_list):
+        if is_valid_word(word, play_hand, word_list):
             word_score = get_word_score(word, HAND_SIZE)
             score += word_score
-            hand = update_hand(hand, word)
+            hand = update_hand(play_hand, word)
             print '"', word, '" earned ',
             print word_score, ' points. ',
             print 'Total: ', score, ' points.'
@@ -263,8 +264,7 @@ def play_game(word_list):
     choice = 'n'
     while choice != 'e':
         if choice == 'n':
-            starting_hand = deal_hand(HAND_SIZE)
-        hand = starting_hand.copy()
+            hand = deal_hand(HAND_SIZE)
         play_hand(hand, word_list)
         print
         choice = ''
