@@ -4,6 +4,8 @@
 # Time: Problem 1 - 0:20
 #       Problem 2 - 0:10
 #       Problem 3 - 0:20
+#       Problem 4 - 0:30
+#       Problem 5 - 0:30
 
 import random
 import string
