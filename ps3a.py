@@ -2,7 +2,7 @@
 # Name: Mathieu Glachant
 # Collaborators: None
 # Time: Problem 1 - 0:20
-#
+#       Problem 2 - 0:10
 
 import random
 import string
