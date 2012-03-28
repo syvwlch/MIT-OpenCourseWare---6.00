@@ -77,7 +77,7 @@ def get_word_score(word, n):
     returns: int >= 0
     """
     assert type(word) == str and type(n) == int and n > 0
-    word.lower()
+    word = word.lower()
     
     score = 0
     
