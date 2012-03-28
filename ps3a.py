@@ -1,8 +1,7 @@
-# 6.00 Problem Set 3A Solutions
-#
-# The 6.00 Word Game
-# Created by: Kevin Luu <luuk> and Jenna Wiens <jwiens>
-#
+# Problem Set 3A
+# Name: Mathieu Glachant
+# Collaborators: None
+# Time: Problem 1 - 0:20
 #
 
 import random
