@@ -24,14 +24,15 @@ def comp_choose_word(hand, word_list):
     best_word = None
     best_score = 0
     for number_letters in range(1, HAND_SIZE + 1):
-        print 'Looking for words that are ', number_letters, ' letters long.'
+        #print 'Looking for words that are ', number_letters, ' letters long.'
+        print '.',
         permutations = get_perms(hand, number_letters)
         for permutation in permutations:
             if permutation in word_list:
                 score = get_word_score(permutation, HAND_SIZE)
-                print permutation, ' is a word, and it scores ', score, ' points.'
+                #print permutation, ' is a word, and it scores ', score, ' points.'
                 if score > best_score:
-                    print 'Best score yet!'
+                    #print permutation, 'is a word and it scores ', score, ' points.'
                     best_score = score
                     best_word = permutation
     return best_word
