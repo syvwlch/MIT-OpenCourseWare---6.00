@@ -2,6 +2,7 @@
 # Name: Mathieu Glachant
 # Collaborators: None
 # Time: Problem 6a: 0:20
+#       Problem 6b: 0:15
 
 from ps3a import *
 import time
@@ -23,9 +24,10 @@ def comp_choose_word(hand, word_list):
     """
     best_word = None
     best_score = 0
+    print 'Computer looking for a good word'
     for number_letters in range(1, calculate_handlen(hand) + 1):
         #print 'Looking for words that are ', number_letters, ' letters long.'
-        #print '.',
+        print '.',
         permutations = get_perms(hand, number_letters)
         for permutation in permutations:
             if permutation in word_list:
@@ -59,7 +61,22 @@ def comp_play_hand(hand, word_list):
      hand: dictionary (string -> int)
      word_list: list (string)
     """
-    # TO DO ...    
+    score = 0
+    play_hand = hand.copy()
+    while calculate_handlen(play_hand) > 0:
+        print 'Current hand: ', display_hand(play_hand)
+        word = comp_choose_word(hand, word_list)
+        if word != None:
+            word_score = get_word_score(word, HAND_SIZE)
+            score += word_score
+            hand = update_hand(play_hand, word)
+            print '"', word, '" earned ',
+            print word_score, ' points. ',
+            print 'Total: ', score, ' points.'
+        else:
+            break
+    print 'Total score: ', score, ' points.'
+    return score  
     
 #
 # Problem #6C: Playing a game
