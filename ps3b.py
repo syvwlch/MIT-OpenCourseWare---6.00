@@ -1,3 +1,8 @@
+# Problem set 3a
+# Name: Mathieu Glachant
+# Collaborators: None
+# Time: Problem 6a: 0:XX
+
 from ps3a import *
 import time
 from perm import *
@@ -71,6 +76,9 @@ def play_game(word_list):
 #
 if __name__ == '__main__':
     word_list = load_words()
-    play_game(word_list)
+    #play_game(word_list)
 
+    hand = deal_hand(HAND_SIZE)
+    print 'Hand is: ', hand
+    print 'Computer chooses word: ', comp_choose_word(hand, word_list)
     
