@@ -3,6 +3,7 @@
 # Collaborators: None
 # Time: Problem 6a: 0:20
 #       Problem 6b: 0:15
+#       Problem 6c: 0:15
 
 from ps3a import *
 import time
@@ -100,8 +101,32 @@ def play_game(word_list):
 
     word_list: list (string)
     """
-    comp_hand = deal_hand(HAND_SIZE)
-    comp_play_hand(comp_hand, word_list)
+    print 'Starting the game with a new, random hand.'
+    choice_nre = 'n'
+    while True:
+        choice_uc = ''
+        while choice_uc not in ('u', 'c'):
+            print 'Please choose from the following:'
+            print '  "u" to play the hand yourself.'
+            print '  "c" to let the computer play the hand.'
+            choice_uc = raw_input('Choice: ').lower()
+        if choice_nre == 'n':
+            hand = deal_hand(HAND_SIZE)
+        if choice_uc == 'u':
+            play_hand(hand, word_list)
+        else:
+            comp_play_hand(hand, word_list)
+        print
+        choice_nre = ''
+        while choice_nre not in ('e', 'n', 'r'):
+            print 'Please choose from the following:'
+            print '  "n" to play a new, random hand.'
+            print '  "r" to play again with the same hand.'
+            print '  "e" to exit the game.'
+            choice_nre = raw_input('Choice: ').lower()
+        if choice_nre == 'e':
+            break
+    return  None
         
 #
 # Build data structures used for entire session and play game
