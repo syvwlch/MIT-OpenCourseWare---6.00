@@ -25,7 +25,7 @@ def comp_choose_word(hand, word_list):
     best_score = 0
     for number_letters in range(1, HAND_SIZE + 1):
         #print 'Looking for words that are ', number_letters, ' letters long.'
-        print '.',
+        #print '.',
         permutations = get_perms(hand, number_letters)
         for permutation in permutations:
             if permutation in word_list:
@@ -83,16 +83,14 @@ def play_game(word_list):
 
     word_list: list (string)
     """
-    # TO DO...
+    comp_hand = deal_hand(HAND_SIZE)
+    comp_play_hand(comp_hand, word_list)
         
 #
 # Build data structures used for entire session and play game
 #
 if __name__ == '__main__':
     word_list = load_words()
-    #play_game(word_list)
+    play_game(word_list)
 
-    hand = deal_hand(HAND_SIZE)
-    print 'Hand is: ', hand
-    print 'Computer chooses word: ', comp_choose_word(hand, word_list)
     
