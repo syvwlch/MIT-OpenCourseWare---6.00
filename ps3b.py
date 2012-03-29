@@ -23,7 +23,7 @@ def comp_choose_word(hand, word_list):
     """
     best_word = None
     best_score = 0
-    for number_letters in range(1, HAND_SIZE + 1):
+    for number_letters in range(1, calculate_handlen(hand) + 1):
         #print 'Looking for words that are ', number_letters, ' letters long.'
         #print '.',
         permutations = get_perms(hand, number_letters)
