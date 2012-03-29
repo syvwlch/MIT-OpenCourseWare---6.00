@@ -1,7 +1,7 @@
 # Problem set 3a
 # Name: Mathieu Glachant
 # Collaborators: None
-# Time: Problem 6a: 0:XX
+# Time: Problem 6a: 0:20
 
 from ps3a import *
 import time
@@ -21,7 +21,20 @@ def comp_choose_word(hand, word_list):
     hand: dictionary (string -> int)
     word_list: list (string)
     """
-    # TO DO...
+    best_word = None
+    best_score = 0
+    for number_letters in range(1, HAND_SIZE + 1):
+        print 'Looking for words that are ', number_letters, ' letters long.'
+        permutations = get_perms(hand, number_letters)
+        for permutation in permutations:
+            if permutation in word_list:
+                score = get_word_score(permutation, HAND_SIZE)
+                print permutation, ' is a word, and it scores ', score, ' points.'
+                if score > best_score:
+                    print 'Best score yet!'
+                    best_score = score
+                    best_word = permutation
+    return best_word
 
 #
 # Problem #6B: Computer plays a hand
