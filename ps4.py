@@ -3,7 +3,7 @@
 # Caesar Cipher Skeleton
 # Name: Mathieu Glachant
 # Collaborators: None
-# Time: Problem 1: 0:00
+# Time: Problem 1: 0:15
 
 import string
 import random
@@ -123,7 +123,17 @@ def build_coder(shift):
     'v': 'y', 'y': 'a', 'x': ' ', 'z': 'b'}
     (The order of the key-value pairs may be different.)
     """
-    ### TODO.
+    assert type(shift) == int
+    assert abs(shift) < 27
+    
+    coder = {}
+    keys = ' ' + string.uppercase
+    #print keys
+    for i in range(len(keys)):
+        #print keys[i] + ' : ' + keys[(i+shift)%27]
+        coder[keys[i]] = keys[(i+shift)%27]
+        coder[keys[i].lower()] = keys[(i+shift)%27].lower()
+    return coder
 
 def build_encoder(shift):
     """
