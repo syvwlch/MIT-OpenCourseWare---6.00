@@ -162,7 +162,10 @@ def build_encoder(shift):
 
     HINT : Use build_coder.
     """
-    ### TODO.
+    assert type(shift) == int
+    assert shift >= 0 and shift < 27
+
+    return build_coder(shift)
 
 def build_decoder(shift):
     """
@@ -192,7 +195,10 @@ def build_decoder(shift):
 
     HINT : Use build_coder.
     """
-    ### TODO.
+    assert type(shift) == int
+    assert shift >= 0 and shift < 27
+
+    return build_coder(-shift)
  
 
 def apply_coder(text, coder):
