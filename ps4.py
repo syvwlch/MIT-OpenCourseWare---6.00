@@ -3,7 +3,7 @@
 # Caesar Cipher Skeleton
 # Name: Mathieu Glachant
 # Collaborators: None
-# Time: Problem 1: 0:15
+# Time: Problem 1: 0:30
 
 import string
 import random
