@@ -124,15 +124,16 @@ def build_coder(shift):
     (The order of the key-value pairs may be different.)
     """
     assert type(shift) == int
-    assert abs(shift) < 27
+    assert abs(shift) < 27 # id est: the 26 letters plus the space
     
     coder = {}
     keys = ' ' + string.uppercase
+    number_characters = len(keys) # id est: 27
     #print keys
-    for i in range(len(keys)):
-        #print keys[i] + ' : ' + keys[(i+shift)%27]
-        coder[keys[i]] = keys[(i+shift)%27]
-        coder[keys[i].lower()] = keys[(i+shift)%27].lower()
+    for i in range(number_characters):
+        #print keys[i] + ' : ' + keys[(i+shift)%number_characters]
+        coder[keys[i]] = keys[(i+shift)%number_characters]
+        coder[keys[i].lower()] = keys[(i+shift)%number_characters].lower()
     return coder
 
 def build_encoder(shift):
