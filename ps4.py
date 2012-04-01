@@ -220,13 +220,13 @@ def apply_coder(text, coder):
     
     result = ''
     for letter in text:
-        print letter + ' corresponds to: ',
+        #print letter + ' corresponds to: ',
         if letter in coder:
             result += coder[letter]
-            print coder[letter]
+            #print coder[letter]
         else:
             result += letter
-            print letter
+            #print letter
     return result
 
 def apply_shift(text, shift):
