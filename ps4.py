@@ -1,7 +1,10 @@
-# 6.00 Problem Set 4
-#
+# Problem Set 4
+# 
 # Caesar Cipher Skeleton
-#
+# Name: Mathieu Glachant
+# Collaborators: None
+# Time: Problem 1: 0:00
+
 import string
 import random
 
