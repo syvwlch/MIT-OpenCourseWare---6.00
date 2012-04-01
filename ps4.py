@@ -246,7 +246,16 @@ def apply_shift(text, shift):
     >>> apply_shift('This is a test.', 8)
     'Apq hq hiham a.'
     """
-    ### TODO.
+    assert type(text) == str
+    assert type(shift) == int
+
+    # protect the down-stream functions from shifts outside [-26,26]
+    shift = shift%27
+    
+    if shift >= 0:
+        return apply_coder(text, build_encoder(shift))
+    else:
+        return apply_coder(text, build_decoder(-shift))
    
 #
 # Problem 2: Codebreaking.
