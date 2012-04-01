@@ -215,8 +215,19 @@ def apply_coder(text, coder):
     >>> apply_coder("Khoor,czruog!", build_decoder(3))
     'Hello, world!'
     """
-    ### TODO.
-  
+    assert type(text) == str
+    assert type(coder) == dict
+    
+    result = ''
+    for letter in text:
+        print letter + ' corresponds to: ',
+        if letter in coder:
+            result += coder[letter]
+            print coder[letter]
+        else:
+            result += letter
+            print letter
+    return result
 
 def apply_shift(text, shift):
     """
