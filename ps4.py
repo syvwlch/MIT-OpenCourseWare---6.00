@@ -4,6 +4,7 @@
 # Name: Mathieu Glachant
 # Collaborators: None
 # Time: Problem 1: 0:30
+#       Problem 2: 0:15
 
 import string
 import random
