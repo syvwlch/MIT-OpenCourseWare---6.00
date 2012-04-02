@@ -277,8 +277,24 @@ def find_best_shift(wordlist, text):
     >>> apply_coder(s, build_decoder(8)) returns
     'Hello, world!'
     """
-    ### TODO
-   
+    assert type(text) == str
+    
+    best_score = 0
+    best_shift = 0
+    for shift in range(27):
+        score = 0
+        words = apply_shift(text, -shift).split()
+        #print 'for shift=', shift, ' cleartext is: ', words,
+        for word in words:
+            if is_word(wordlist, word):
+                score += 1
+        #print ' which scores: ',score
+        if score > best_score:
+            #print 'BEST SCORE!'
+            best_score = score
+            best_shift = shift
+    return best_shift
+
 #
 # Problem 3: Multi-level encryption.
 #
