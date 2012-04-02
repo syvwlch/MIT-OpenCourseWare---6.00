@@ -5,6 +5,7 @@
 # Collaborators: None
 # Time: Problem 1: 0:30
 #       Problem 2: 0:15
+#       Problem 3: 0:15
 
 import string
 import random
@@ -315,7 +316,14 @@ def apply_shifts(text, shifts):
     >>> apply_shifts("Do Androids Dream of Electric Sheep?", [(0,6), (3, 18), (12, 16)])
     'JufYkaolfapxQdrnzmasmRyrpfdvpmEurrb?'
     """
-    ### TODO.
+    assert type(text) == str
+
+    cypher_text = text
+    for shift in shifts:
+        if shift[0] >= 0 and shift [0] < len(text):
+            cypher_text = (cypher_text[:shift[0]]
+                           + apply_shift(cypher_text[shift[0]:], shift[1]))
+    return cypher_text
  
 #
 # Problem 4: Multi-level decryption.
